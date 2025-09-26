@@ -102,7 +102,7 @@ export function TodoItem({
                     data-testid={`button-save-${todo.id}`}
                   >
                     <Check className="mr-1 h-3 w-3" />
-                    Save
+                    Update
                   </Button>
                   <Button
                     size="sm"

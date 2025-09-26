@@ -63,7 +63,7 @@ export default function Home() {
                 <CheckSquare className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-foreground">Todo Manager</h1>
+                <h1 className="text-2xl font-bold text-foreground">To-do Manager</h1>
                 <p className="text-sm text-muted-foreground">Stay organized and productive</p>
               </div>
             </div>

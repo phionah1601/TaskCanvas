@@ -118,7 +118,7 @@ export function TodoList({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold">Your Todos</h2>
+        <h2 className="text-xl font-semibold">Your To-dos</h2>
         <span className="text-sm text-muted-foreground" data-testid="todo-count">
           {filteredTodos.length} {filteredTodos.length === 1 ? 'item' : 'items'}
         </span>

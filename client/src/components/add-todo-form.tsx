@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Plus } from 'lucide-react';
-import { CreateTodoRequest } from '@/types/todo';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Plus } from "lucide-react";
+import { CreateTodoRequest } from "@/types/todo";
 
 interface AddTodoFormProps {
   onSubmit: (data: CreateTodoRequest) => void;
@@ -12,12 +12,12 @@ interface AddTodoFormProps {
 }
 
 export function AddTodoForm({ onSubmit, isLoading }: AddTodoFormProps) {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!title.trim()) {
       return;
     }
@@ -28,8 +28,8 @@ export function AddTodoForm({ onSubmit, isLoading }: AddTodoFormProps) {
     });
 
     // Reset form
-    setTitle('');
-    setDescription('');
+    setTitle("");
+    setDescription("");
   };
 
   return (
@@ -37,7 +37,7 @@ export function AddTodoForm({ onSubmit, isLoading }: AddTodoFormProps) {
       <CardHeader>
         <CardTitle className="flex items-center text-lg">
           <Plus className="mr-2 h-5 w-5 text-primary" />
-          Add New Todo
+          Add New To-do
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -50,7 +50,7 @@ export function AddTodoForm({ onSubmit, isLoading }: AddTodoFormProps) {
               <Input
                 id="title"
                 type="text"
-                placeholder="Enter todo title..."
+                placeholder="Enter to-do title..."
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
@@ -76,14 +76,14 @@ export function AddTodoForm({ onSubmit, isLoading }: AddTodoFormProps) {
             </div>
           </div>
           <div className="flex justify-end">
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={isLoading || !title.trim()}
-              data-testid="button-add-todo"
+              data-testid="button-add-to-do"
               className="font-medium"
             >
               <Plus className="mr-2 h-4 w-4" />
-              {isLoading ? 'Adding...' : 'Add Todo'}
+              {isLoading ? "Adding..." : "Add To-do"}
             </Button>
           </div>
         </form>

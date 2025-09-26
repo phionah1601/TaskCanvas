@@ -7,8 +7,8 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
-import { Trash2 } from 'lucide-react';
+} from "@/components/ui/alert-dialog";
+import { Trash2 } from "lucide-react";
 
 interface DeleteConfirmationModalProps {
   isOpen: boolean;
@@ -23,7 +23,7 @@ export function DeleteConfirmationModal({
   todoTitle,
   onConfirm,
   onCancel,
-  isDeleting
+  isDeleting,
 }: DeleteConfirmationModalProps) {
   return (
     <AlertDialog open={isOpen} onOpenChange={onCancel}>
@@ -34,20 +34,21 @@ export function DeleteConfirmationModal({
               <Trash2 className="h-6 w-6 text-destructive" />
             </div>
             <div>
-              <AlertDialogTitle>Delete Todo</AlertDialogTitle>
+              <AlertDialogTitle>Delete To-do</AlertDialogTitle>
               <AlertDialogDescription className="text-sm text-muted-foreground">
                 This action cannot be undone
               </AlertDialogDescription>
             </div>
           </div>
         </AlertDialogHeader>
-        
+
         <AlertDialogDescription className="mb-6">
-          Are you sure you want to delete "<span className="font-medium">{todoTitle}</span>"?
+          Are you sure you want to delete "
+          <span className="font-medium">{todoTitle}</span>"?
         </AlertDialogDescription>
-        
+
         <AlertDialogFooter>
-          <AlertDialogCancel 
+          <AlertDialogCancel
             onClick={onCancel}
             disabled={isDeleting}
             data-testid="button-cancel-delete"
@@ -61,7 +62,7 @@ export function DeleteConfirmationModal({
             className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
           >
             <Trash2 className="mr-2 h-4 w-4" />
-            {isDeleting ? 'Deleting...' : 'Delete'}
+            {isDeleting ? "Deleting..." : "Delete"}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
